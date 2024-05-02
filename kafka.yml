@@ -3,10 +3,11 @@ kind: Kafka
 metadata:
   name: my-strimzi-cluster2
   namespace: kafka
+  resourceVersion: "1412880"
 spec:
   kafka:
     config:
-      auto.create.topics.enable: false
+      auto.create.topics.enable: true
       log.message.format.version: "2.3"
       log.retention.bytes: 1073741824
       log.retention.hours: 24

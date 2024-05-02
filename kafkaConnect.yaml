@@ -9,7 +9,7 @@ metadata:
     strimzi.io/use-connector-resources: "true"
     #  # use-connector-resources configures this KafkaConnect
 spec:
-  replicas: 3
+  replicas: 1
   image: kstobbel/kafka-connect-mongodb:1.0.1
   bootstrapServers: my-strimzi-cluster2-kafka-bootstrap:9093
   config:
@@ -21,9 +21,9 @@ spec:
     value.converter: org.apache.kafka.connect.json.JsonConverter
     key.converter.schemas.enable: true
     value.converter.schemas.enable: true
-    config.storage.replication.factor: 3
-    offset.storage.replication.factor: 3
-    status.storage.replication.factor: 3
+    config.storage.replication.factor: 1
+    offset.storage.replication.factor: 1
+    status.storage.replication.factor: 1
   logging:
     type: inline
     loggers:
