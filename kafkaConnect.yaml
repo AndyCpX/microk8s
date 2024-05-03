@@ -10,7 +10,7 @@ metadata:
     #  # use-connector-resources configures this KafkaConnect
 spec:
   replicas: 1
-  image: kstobbel/kafka-connect-mongodb:1.0.1
+  image: andycpx/debezium-mongo:v1
   bootstrapServers: my-strimzi-cluster2-kafka-bootstrap:9093
   config:
     group.id: kstobbel-connect-cluster

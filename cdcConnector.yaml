@@ -15,4 +15,5 @@ spec:
     snapshot.mode: never
     mongodb.user: my-user
     mongodb.password: andy87
+    topic.prefix: full
     collection.include.list: company.product
