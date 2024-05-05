@@ -1,0 +1,22 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaConnector
+metadata:
+  name: "synk-connector"
+  namespace: kafka
+  labels:
+    strimzi.io/cluster: my-connect-cluster2
+spec:
+  class: io.confluent.connect.elasticsearch.ElasticsearchSinkConnector
+  tasksMax: 1
+  config:
+    type.name: "_doc"
+    topics: full.company.product
+    #topics.regex: "full.company*"
+    schema.ignore: true
+    value.converter.schemas.enable: false
+    connection.url: "http://quickstart-es-default.elastic.svc.cluster.local:9200"
+    value.converter: org.apache.kafka.connect.json.JsonConverter
+    key.converter: org.apache.kafka.connect.storage.StringConverter
+    connection.username: elastic
+    connection.password: 5q3gQa1L9A8zF343FxH29Iwa
+    xpack.security.http.ssl.enabled: false
